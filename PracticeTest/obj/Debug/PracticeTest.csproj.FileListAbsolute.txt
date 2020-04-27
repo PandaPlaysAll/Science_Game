@@ -1,0 +1,7 @@
+C:\Users\Joshua\source\repos\PracticeTest\PracticeTest\obj\Debug\PracticeTest.csproj.CoreCompileInputs.cache
+C:\Users\Joshua\source\repos\PracticeTest\PracticeTest\bin\Debug\PracticeTest.exe.config
+C:\Users\Joshua\source\repos\PracticeTest\PracticeTest\bin\Debug\PracticeTest.exe
+C:\Users\Joshua\source\repos\PracticeTest\PracticeTest\bin\Debug\PracticeTest.pdb
+C:\Users\Joshua\source\repos\PracticeTest\PracticeTest\obj\Debug\PracticeTest.exe
+C:\Users\Joshua\source\repos\PracticeTest\PracticeTest\obj\Debug\PracticeTest.pdb
+C:\Users\Joshua\source\repos\PracticeTest\PracticeTest\obj\Debug\PracticeTest.csprojAssemblyReference.cache
