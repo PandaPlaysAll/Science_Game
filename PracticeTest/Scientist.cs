@@ -9,20 +9,41 @@ using System.Threading.Tasks;
 
 namespace PracticeTest
 {
-    public class Scientist
+    public class Scientist : Character, ICharacter
     {
+        
+      
         //fields
         private Dictionary<string, Experiment> _project;
+        //has a potion?
+        //how to make a potion?
+        //scientists are in a room, can only go right, left is locked
 
         //constructor
-        public Scientist()
+        public Scientist(string name, string desc) : base(name, desc)
         {
             _project = new Dictionary<string, Experiment>();
+            
             
 
         }
 
+        public Scientist() : this ("Basic Scientist", "Basic Scientist Description")
+        {
+            
+        }
+
         //methods
+        public void Attack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Heal()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Adopt(Experiment project, string name)
         {
             if (project is Cybernetics)
