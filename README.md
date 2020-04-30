@@ -1,6 +1,4 @@
 # Science_Game
-Distinction OOP Project
-&nbsp;
-Basic console application concept
-&nbsp;
+Distinction OOP Project\
+Basic console application concept\
 Using Enter and arrow keys to navigate
