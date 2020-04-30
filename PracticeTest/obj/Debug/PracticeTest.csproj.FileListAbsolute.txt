@@ -5,3 +5,4 @@ C:\Users\Joshua\source\repos\PracticeTest\PracticeTest\bin\Debug\PracticeTest.pd
 C:\Users\Joshua\source\repos\PracticeTest\PracticeTest\obj\Debug\PracticeTest.exe
 C:\Users\Joshua\source\repos\PracticeTest\PracticeTest\obj\Debug\PracticeTest.pdb
 C:\Users\Joshua\source\repos\PracticeTest\PracticeTest\obj\Debug\PracticeTest.csprojAssemblyReference.cache
+C:\Users\Joshua\source\repos\PracticeTest\PracticeTest\bin\Debug\Music.wav

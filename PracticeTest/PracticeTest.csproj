@@ -43,15 +43,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cybernetics.cs" />
-    <Compile Include="Experiment.cs" />
+    <Compile Include="Model\Alien\Alien.cs" />
+    <Compile Include="Model\Character.cs" />
+    <Compile Include="Model\Colour.cs" />
+    <Compile Include="Model\Direction.cs" />
+    <Compile Include="Model\Inventory.cs" />
+    <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\ItemType.cs" />
+    <Compile Include="Model\ResourceController.cs" />
+    <Compile Include="Model\RoomPath.cs" />
+    <Compile Include="Model\Demon\DemonAI.cs" />
+    <Compile Include="GameLogic.cs" />
+    <Compile Include="Model\GameObject.cs" />
+    <Compile Include="HighScoreController.cs" />
+    <Compile Include="Model\Knight\Knight.cs" />
+    <Compile Include="MenuController.cs" />
+    <Compile Include="Model\Scientist\Potion.cs" />
+    <Compile Include="Model\Scientist\PotionType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scientist.cs" />
-    <Compile Include="Transgenesis.cs" />
+    <Compile Include="Model\Room.cs" />
+    <Compile Include="Model\Scientist\Scientist.cs" />
+    <Compile Include="Model\Vampire\Vampire.cs" />
+    <Compile Include="Model\Werewolf\Werewolf.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Music.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\Dragon\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
