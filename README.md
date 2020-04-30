@@ -1,3 +1,6 @@
 # Science_Game
 Distinction OOP Project
-Built from OOP Practice Test, extending for fun purposes
+&nbsp;
+Basic console application concept
+&nbsp;
+Using Enter and arrow keys to navigate
