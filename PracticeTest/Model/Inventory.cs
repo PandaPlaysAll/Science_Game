@@ -54,12 +54,10 @@ namespace PracticeTest
                         break;
                     }
                 }    
-                
-
             }
             foreach (Item item in temp.Values)
             {
-                _items.Add(item.Name, item);
+                Put(item);
             }
             if (count == types.Length)
                 return true;
@@ -80,6 +78,42 @@ namespace PracticeTest
             else
                 Console.WriteLine("Invalid, not an item");
 
+        }
+
+        public string PrintInventory()
+        {
+            string print = string.Empty;
+
+            if (_items.Count < 1)
+            {
+                return print = "You have no items in your Inventory\n";
+            } else 
+            { 
+                print += "You have the following in your inventory:\n";
+                foreach (string item in _items.Keys)
+                {
+                
+                    if (_items.Count == 1)
+                    {
+                        print += "a " + item + "!\n"; 
+                    } 
+                    else if (_items.Count > 1)
+                    {
+                        if (_items.Keys.Last().Equals(item))
+                        {
+                            print += "and a " + item + "!\n";
+                        } else { 
+                        print += "a " + item + "\n";
+                        }
+                    } 
+                    else 
+                    { 
+                    print += "a " + item + "\n";
+                    }
+                }
+            }
+            return print;
+            
         }
     }
 }

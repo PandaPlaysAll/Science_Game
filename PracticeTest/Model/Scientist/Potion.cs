@@ -14,30 +14,6 @@ namespace PracticeTest
             _type = type;
         }
 
-        public void Execute()
-        {
-            if (Type == PotionType.Buff_Buff)
-            {
-
-            }
-            if (Type == PotionType.Dark_Matter)
-            {
-
-            }
-            if (Type == PotionType.Healthy_Wealthy)
-            {
-
-            }
-            if (Type == PotionType.Light_Furry)
-            {
-
-            }
-            if (Type == PotionType.Posion_Ivy)
-            {
-
-            }
-
-        }
         public PotionType Type
         {
             get { return _type; }

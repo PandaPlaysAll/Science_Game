@@ -17,6 +17,7 @@ namespace PracticeTest
             Random random = new Random();
             int dmg = random.Next(1, 30);
             player.Health -= dmg;
+            Console.WriteLine("{0} attacked {1}, you have {2} left", Name, player.Name, player.Health);
         }
     }
 }

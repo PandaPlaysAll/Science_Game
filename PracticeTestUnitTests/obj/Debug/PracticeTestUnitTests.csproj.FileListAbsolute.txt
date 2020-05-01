@@ -19,3 +19,4 @@ C:\Users\Joshua\source\repos\PracticeTest\PracticeTestUnitTests\bin\Debug\nunit.
 C:\Users\Joshua\source\repos\PracticeTest\PracticeTestUnitTests\obj\Debug\PracticeTestUnitTests.csproj.CopyComplete
 C:\Users\Joshua\source\repos\PracticeTest\PracticeTestUnitTests\obj\Debug\PracticeTestUnitTests.dll
 C:\Users\Joshua\source\repos\PracticeTest\PracticeTestUnitTests\obj\Debug\PracticeTestUnitTests.pdb
+C:\Users\Joshua\source\repos\PracticeTest\PracticeTestUnitTests\bin\Debug\Music.wav

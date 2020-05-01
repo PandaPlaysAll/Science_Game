@@ -12,15 +12,17 @@ namespace PracticeTest
     public class Scientist : Character
     {
 
-
-        List<Potion> _potions;
+        //declarations
+        private List<Potion> _potions;
         //scientist can only attack with potion
+        //There is an implicit Inventory from Character
 
         //constructor
         public Scientist(string name, string desc) : base(name, desc)
         {
-        
-            
+
+            Damage = 5;
+            _potions = new List<Potion>();
            
 
         }
@@ -33,41 +35,50 @@ namespace PracticeTest
         //methods
 
 
-        public void Attack(Character player,PotionType potionType)
+        public void Attack(Character player,PotionType potionType = PotionType.Invalid)
         {
             bool completed = false;
             int dmg = 0;
-            while (!completed)
-            foreach (Potion p in Potion)
-            {    
-                switch (potionType)
+            while (!completed) { 
+                if (_potions.Count > 0)
                 {
-                    case PotionType.Healthy_Wealthy:
-                        AdvHeal(p);
-                        Console.WriteLine("{0} healed up to {1}", this.Name, Health);
-                        completed = true;
-                        break;
-                    case PotionType.Dark_Matter:
-                        completed = true;
-                        break;
-                    case PotionType.Posion_Ivy:
-                        completed = true;
-                        break;
-                    case PotionType.Light_Furry:
-                        completed = true;
-                        break;
-                        case PotionType.Buff_Buff:
-                        completed = true;
-                        break;
-                    default:
-                        completed = true;
-                        break;
+                    foreach (Potion p in Potion)
+                    {    
+                        switch (potionType)
+                        {
+                            case PotionType.Healthy_Wealthy:
+                                AdvHeal(p);
+                                Console.WriteLine("{0} healed up to {1}", this.Name, Health);
+                                dmg += 10;
+                                completed = true;
+                                break;
+                            case PotionType.Dark_Matter:
+                                completed = true;
+                                break;
+                            case PotionType.Posion_Ivy:
+                                completed = true;
+                                break;
+                            case PotionType.Light_Furry:
+                                completed = true;
+                                break;
+                                case PotionType.Buff_Buff:
+                                completed = true;
+                                break;
+                            default:
+                                completed = true;
+                                break;
+                            }
                     }
-            }
-            player.Health -= dmg;
-            Console.WriteLine("{0} attacked {1}, {2} has {3} left", Name, player.Name, player.Health);
+                } else { completed = true; }
+            } 
+            
+
+            player.Health -= (dmg + Damage);
+            Console.WriteLine("{0} attacked {1}, {2} has {3} HP left", Name, player.Name, player.Name, player.Health);
 
         }
+
+        
 
         public void AdvHeal(Potion p) 
         {
@@ -91,7 +102,7 @@ namespace PracticeTest
 
      
 
-        public void FormPotion(PotionType potion, string name, string desc) 
+        public bool FormPotion(PotionType potion, string name, string desc) 
         {
 
      
@@ -99,23 +110,26 @@ namespace PracticeTest
             switch (potion)
            { 
                 case PotionType.Buff_Buff:
+                    
                     if (preparePotion(new ItemType[]
                     {
                         ItemType.water,
                         ItemType.steak,
                     })) { 
                         Potion.Add(new Potion(name, desc, potion));}
-                    break;
+                    return true;
                 case PotionType.Dark_Matter:
                     if (preparePotion(new ItemType[]
                     {
                         ItemType.ember,
                         ItemType.bone,
                         ItemType.mushroom,
-                    }
-                    )) {
-                        Potion.Add(new Potion(name, desc, potion));}
-                    break;
+                    })) 
+                     { 
+                        Potion.Add(new Potion(name, desc, potion));
+                        return true;
+                     }
+                    return false;
                 case PotionType.Healthy_Wealthy:
                     if (preparePotion(new ItemType[]
                     {
@@ -127,7 +141,7 @@ namespace PracticeTest
                     }
                     )) {
                         Potion.Add(new Potion(name, desc, potion));}
-                    break;
+                    return true;
                 case PotionType.Light_Furry:
                     if (preparePotion(new ItemType[]
                     {
@@ -137,7 +151,7 @@ namespace PracticeTest
                         ItemType.steak,
                     })) {
                         Potion.Add(new Potion(name, desc, potion));}
-                    break;
+                    return true;
                 case PotionType.Posion_Ivy:
                     if (preparePotion(new ItemType[]
                     {
@@ -148,9 +162,9 @@ namespace PracticeTest
                     })) {
                         Potion.Add(new Potion(name, desc, potion));
                     }
-                    break;
+                    return true;
                 default:
-                    break;
+                    return false;
             }
 
 
@@ -159,6 +173,7 @@ namespace PracticeTest
 
         public bool preparePotion(ItemType[] types)
         {
+
             if (Inventory.HasAllItemTypes(types))
             {
                 return true;
@@ -171,7 +186,43 @@ namespace PracticeTest
             get { return _potions; }
         }
 
+        public string PrintPotions()
+        {
+            string print = string.Empty;
+            if (_potions.Count < 1)
+            {
+                return print = "You have no potions\n";
+            }
+            else
+            {
+                print += "You have the following potions:\n";
+                foreach (Potion item in _potions)
+                {
+                    string normal = "Potion name: " + "'" + item.Name + "'" + ".\nItem Type: " + item.Type + ".\n";
+                    if (_potions.Count == 1)
+                    {
+                        print += normal;
+                    }
+                    else if (_potions.Count > 1)
+                    {
+                        if (_potions.Last().Equals(item))
+                        {
+                            print += normal;
+                        } 
+                        else
+                        {
+                            print += normal;
+                        }
+                    }
+                    else
+                    {
+                        print += normal;
+                    }
+                }
+            }
+            return print;
 
+        }
 
 
 

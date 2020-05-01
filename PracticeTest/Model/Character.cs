@@ -18,6 +18,7 @@ namespace PracticeTest
         public Character (string name, string desc) : base (name, desc) 
         {
             _stunned = false;
+            _inventory = new Inventory();
             Health = 100;
             Direction = Direction.Right;
 

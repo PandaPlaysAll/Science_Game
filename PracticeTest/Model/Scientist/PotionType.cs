@@ -13,5 +13,6 @@ namespace PracticeTest
         Buff_Buff,
         Dark_Matter,
         Healthy_Wealthy,
+        Invalid,
     }
 }

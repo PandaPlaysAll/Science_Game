@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace PracticeTest
 {
-    public class Werewolf
+    public class Werewolf : Character
     {
+        public Werewolf(string name, string desc) : base(name, desc)
+        {
+            Health = 150;
+        }
+
+
     }
+
+
 }

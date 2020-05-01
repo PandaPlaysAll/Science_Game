@@ -55,7 +55,6 @@
     <Compile Include="Model\Demon\DemonAI.cs" />
     <Compile Include="GameLogic.cs" />
     <Compile Include="Model\GameObject.cs" />
-    <Compile Include="HighScoreController.cs" />
     <Compile Include="Model\Knight\Knight.cs" />
     <Compile Include="MenuController.cs" />
     <Compile Include="Model\Scientist\Potion.cs" />
