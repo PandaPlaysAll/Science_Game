@@ -36,14 +36,52 @@ namespace PracticeTest
             return false;
         }
 
+
+
+        public void RemoveItemType(ItemType type)
+        {
+            //only take first
+            bool condition = false;
+            while(!condition)
+            {
+                foreach (Item item in _items.Values)
+                {
+                    if (item.Type == type)
+                    {
+                        _items.Remove(item.Name);
+                        condition = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        public void RemoveAllItemTypes(ItemType[] types)
+        {
+            foreach (ItemType type in types)
+            {
+                RemoveItemType(type);
+            }
+        }
+
+        public bool HasItemType(ItemType type)
+        {
+            foreach (Item item in _items.Values)
+            {
+                if (item.Type == type)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public bool HasAllItemTypes(ItemType[] types)
         {
             Dictionary<string, Item> temp = new Dictionary<string, Item>();
             int count = 0;
             foreach (ItemType type in types)
             {
-                
-             
                 foreach (Item item in _items.Values)
                 {
                     if (item.Type == type) 

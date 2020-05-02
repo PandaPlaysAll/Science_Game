@@ -176,6 +176,7 @@ namespace PracticeTest
 
             if (Inventory.HasAllItemTypes(types))
             {
+                Inventory.RemoveAllItemTypes(types);
                 return true;
             }
             return false;

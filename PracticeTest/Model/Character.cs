@@ -13,19 +13,17 @@ namespace PracticeTest
         private int _damage;
         private bool _stunned;
         private Inventory _inventory;
-        private Direction _direction;
 
         public Character (string name, string desc) : base (name, desc) 
         {
             _stunned = false;
             _inventory = new Inventory();
             Health = 100;
-            Direction = Direction.Right;
 
 
         }
 
-        public virtual void Attack() { }
+        public virtual void Attack(Character p2) { }
 
 
         public int Health
@@ -50,12 +48,6 @@ namespace PracticeTest
         {
             get { return _inventory; }
          
-        }
-
-        public Direction Direction
-        {
-            get { return _direction; }
-            set { _direction = value; }
         }
 
 

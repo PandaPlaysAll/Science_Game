@@ -6,20 +6,17 @@ using System.Threading.Tasks;
 
 namespace PracticeTest
 {
-    public class MenuController
-    {
-        public MenuController()
-        {
+    public static class MenuController
+{
 
-        }
 
-        public void StartMenu()
+        public static void StartMenu()
         {
             ConsoleKey key = new ConsoleKey();
             Console.CursorVisible = false;
             int currentSelection = 0;
 
-
+           
             List<string> menu = new List<string>()
             {
                 "Play",
