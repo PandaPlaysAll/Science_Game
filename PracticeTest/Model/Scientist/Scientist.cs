@@ -12,12 +12,9 @@ namespace PracticeTest
     public class Scientist : Character
     {
 
-        //declarations
-        
+        //fields
         private List<Potion> _potions;
-        //scientist can only attack with potion
-        //There is an implicit Inventory from Character
-
+        
         //constructor
         public Scientist(string name, string desc) : base(name, desc)
         {
@@ -33,9 +30,7 @@ namespace PracticeTest
             
         }
 
-        //methods
-
-        //implicit normal attack
+        //methods / Implicit normal attack
         public void Attack(Character player,PotionType potionType)
         {
             bool completed = false;

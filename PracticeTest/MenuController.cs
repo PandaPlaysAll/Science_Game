@@ -208,10 +208,10 @@ namespace PracticeTest
                         Console.WriteLine("Enter Potion name");
                         string name = Console.ReadLine();
                         Console.WriteLine("Enter a number for the Potion Type!\n0: Position_Ivy\n1: Light_Fury\n2: Buff_Buff\n3: Dark_Matter\n4: Dark_Matter\n5: Healthy_Wealthy\n");
-                        int i = Convert.ToInt32(Console.ReadLine());
+                        int.TryParse(Console.ReadLine(), out int i);
                         ((Scientist)GameLogic.HumanPlayer).FormPotion(((PotionType)i), name);
-                        if (((Scientist)GameLogic.HumanPlayer).Potion.Count > 0)
-                            Console.WriteLine("{0}", ((Scientist)GameLogic.HumanPlayer).PrintPotions());
+                        Console.WriteLine("{0}", ((Scientist)GameLogic.HumanPlayer).PrintPotions());
+                       
 
                     }
                     else if (completed && (_currentSelection == 4))

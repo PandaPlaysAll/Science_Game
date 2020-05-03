@@ -9,7 +9,7 @@ namespace PracticeTest
 {
     public static class GameLogic
     {
-        //declaration
+        //fields
         private static Character _humanPlayer;
         private static Character _aiPlayer;
         private static Background _background;
@@ -26,8 +26,9 @@ namespace PracticeTest
         public static Character AIPlayer { get { return _aiPlayer; } set { _aiPlayer = value; } }
         public static Background Background { get { return _background; } set { _background = value; } }
         public static int Level { get; set; }
-        //let user choose player,
+        
 
+        //constructor
         static GameLogic()
         {
             _filePath = @"C:\Users\Joshua\source\repos\PracticeTest\PracticeTest\Model\save.txt";
@@ -38,14 +39,7 @@ namespace PracticeTest
 
 
             
-
-        public static void SaveFile()
-        {
-            //file path
-        }
-        //GUI / Consolebased
-        //create players here?
-
+        //methods
         public static void CreateGame()
         {
             ResourceController.PlayMusic();
@@ -84,24 +78,12 @@ namespace PracticeTest
                     if (_gameWriter != null)
                     {
                         _gameWriter.Close();
-                        
                     }
-                }
-
-
-                
-               
+                } 
             }
-            
-            
-            
-
-            //could save this information to a file
-
             Console.ResetColor();
             MenuController.HandleState();
-            //Menu Controller should change things
-            //be able to handle the different modes, embedded with eachother?
+          
             
         }
 
@@ -115,14 +97,12 @@ namespace PracticeTest
                 s.RemovePotionType(t);
             } else
             {
-
-            HumanPlayer.Attack(AIPlayer);
-            AIPlayer.Attack(HumanPlayer);
+                HumanPlayer.Attack(AIPlayer);
+                AIPlayer.Attack(HumanPlayer);
 
             }
-            GameItems.RandomItem(AIPlayer);
-            GameItems.RandomItem(HumanPlayer);
-
+                GameItems.RandomItem(AIPlayer);
+                GameItems.RandomItem(HumanPlayer);
             if (HumanPlayer.Health <= 0)
             {
                 Console.Clear();

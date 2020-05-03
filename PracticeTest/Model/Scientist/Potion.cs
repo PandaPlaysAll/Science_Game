@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace PracticeTest
 {
+    //constructor
     public class Potion : GameObject
     {
+        //fields
         private PotionType _type;
+
+        //constructor
         public Potion(string name, string desc, PotionType type) : base(name, desc)
         {
             _type = type;
         }
 
-        public PotionType Type
-        {
-            get { return _type; }
-        }
-
+        //methods
         public string PrintStringRequirements(PotionType type)
         {
             string message = string.Empty;
@@ -45,7 +45,7 @@ namespace PracticeTest
             return message;
         }
 
-        public ItemType[] PrintPotionTypeRequirement(PotionType type)
+        public ItemType[] PrintPotionTypeRequirement(PotionType type) //needs to be changed to allow static way for the class. Simplify needed
         {
             string message = string.Empty;
             switch (type)
@@ -66,7 +66,13 @@ namespace PracticeTest
             return null;
         }
 
+        //property
+        public PotionType Type
+        {
+            get { return _type; }
+        }
+
     }
-    //list requirements?
+    
 }
 
