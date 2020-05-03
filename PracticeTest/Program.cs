@@ -10,11 +10,11 @@ namespace PracticeTest
     {
         static void Main(string[] args)
         {
-            ResourceController resources = new ResourceController();
-            resources.PlayMusic();
-            MenuController menu = new MenuController();
-            menu.StartMenu();
-
+            
+            
+            GameLogic.CreateGame();
+            
+            
 
             
 

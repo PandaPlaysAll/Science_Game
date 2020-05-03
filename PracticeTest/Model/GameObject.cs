@@ -14,7 +14,7 @@ namespace PracticeTest
         private static int _charactersExisting;
         
 
-        public GameObject(string name, string desc) 
+        public GameObject(string name = "Unidentified", string desc = "Unidentified") 
         {
             _name = name;
             _desc = desc;

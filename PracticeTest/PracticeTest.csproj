@@ -43,10 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Background.cs" />
+    <Compile Include="GameItems.cs" />
+    <Compile Include="Gamestate.cs" />
     <Compile Include="Model\Alien\Alien.cs" />
     <Compile Include="Model\Character.cs" />
-    <Compile Include="Model\Colour.cs" />
-    <Compile Include="Model\Direction.cs" />
+    <Compile Include="Model\Extensible.cs" />
     <Compile Include="Model\Inventory.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\ItemType.cs" />
@@ -56,6 +58,7 @@
     <Compile Include="Model\GameObject.cs" />
     <Compile Include="Model\Knight\Knight.cs" />
     <Compile Include="MenuController.cs" />
+    <Compile Include="Model\Scientist\AIScientist.cs" />
     <Compile Include="Model\Scientist\Potion.cs" />
     <Compile Include="Model\Scientist\PotionType.cs" />
     <Compile Include="Program.cs" />

@@ -13,6 +13,7 @@ namespace PracticeTest
     {
 
         //declarations
+        
         private List<Potion> _potions;
         //scientist can only attack with potion
         //There is an implicit Inventory from Character
@@ -20,7 +21,7 @@ namespace PracticeTest
         //constructor
         public Scientist(string name, string desc) : base(name, desc)
         {
-
+            
             Damage = 5;
             _potions = new List<Potion>();
            
@@ -34,8 +35,8 @@ namespace PracticeTest
 
         //methods
 
-
-        public void Attack(Character player,PotionType potionType = PotionType.Invalid)
+        //implicit normal attack
+        public void Attack(Character player,PotionType potionType)
         {
             bool completed = false;
             int dmg = 0;
@@ -73,9 +74,22 @@ namespace PracticeTest
             } 
             
 
-            player.Health -= (dmg + Damage);
-            Console.WriteLine("{0} attacked {1}, {2} has {3} HP left", Name, player.Name, player.Name, player.Health);
+            if (SwordCount >= 3)
+            {
+                Inventory.RemoveItemType(ItemType.sword);
+            }
 
+            if (Inventory.HasItemType(ItemType.sword))
+            {
+                dmg += 10;
+                SwordCount++;
+                Console.WriteLine("{0} attacked {1} with a sword!, {2} has {3} HP left", Name, player.Name, player.Name, player.Health);
+            }
+            else
+            {
+                Console.WriteLine("{0} attacked {1}, {2} has {3} HP left", Name, player.Name, player.Name, player.Health);
+            }
+            player.Health -= (dmg + Damage);
         }
 
         
@@ -102,15 +116,16 @@ namespace PracticeTest
 
      
 
-        public bool FormPotion(PotionType potion, string name, string desc) 
+        public bool FormPotion(PotionType potion, string name, string desc = "none") 
         {
+         //   Potion _fakePotion;
+           // _fakePotion = new Potion("fake", "fake", PotionType.Buff_Buff);
+            
 
-     
             //console.writeline (successfuly made ? switch.case?)
             switch (potion)
            { 
                 case PotionType.Buff_Buff:
-                    
                     if (preparePotion(new ItemType[]
                     {
                         ItemType.water,
@@ -170,6 +185,23 @@ namespace PracticeTest
 
         }
 
+        public void RemovePotionType(PotionType type)
+        {
+            bool completed = false;
+            while (!completed)
+            {
+                foreach (Potion p in Potion)
+                {
+                    if (p.Type == type)
+                    {
+                        Potion.Remove(p);
+                        completed = true;
+                        break;
+                    }
+                }
+            }
+        }
+
 
         public bool preparePotion(ItemType[] types)
         {
@@ -186,6 +218,16 @@ namespace PracticeTest
         {
             get { return _potions; }
         }
+
+        public bool PotionListNotEmpty()
+        {
+            if (Potion.Count != 0)
+            { 
+                return true;
+            }
+            return false;
+        }
+
 
         public string PrintPotions()
         {
@@ -222,7 +264,6 @@ namespace PracticeTest
                 }
             }
             return print;
-
         }
 
 

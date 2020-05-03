@@ -23,6 +23,11 @@ namespace PracticeTest
             return false;
         }
 
+        public int Count
+        {
+            get { return _items.Count; }
+        }
+
         public bool HasItems(string[] items)
         {
             int count = 0;
@@ -112,6 +117,7 @@ namespace PracticeTest
         public void Put(Item item)
         {
             if (item is Item)
+                
                 _items.Add(item.Name, item);
             else
                 Console.WriteLine("Invalid, not an item");
@@ -122,7 +128,7 @@ namespace PracticeTest
         {
             string print = string.Empty;
 
-            if (_items.Count < 1)
+            if (_items.Count <= 0)
             {
                 return print = "You have no items in your Inventory\n";
             } else 

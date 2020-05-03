@@ -22,6 +22,7 @@ namespace PracticeTest
             get { return _type; }
         }
 
+
         
     }
 }
